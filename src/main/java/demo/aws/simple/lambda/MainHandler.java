@@ -6,7 +6,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class MainHandler implements RequestHandler<WeatherData, WeatherData> {
 
-    @Override
+    @Override 
     public WeatherData handleRequest(WeatherData event, Context context) {
         LambdaLogger logger = context.getLogger();
         // process event
