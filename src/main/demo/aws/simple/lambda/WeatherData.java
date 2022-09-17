@@ -1,4 +1,4 @@
-package demo.lambda;
+package demo.aws.simple.lambda;
 
 public class WeatherData {
 
