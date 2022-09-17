@@ -13,5 +13,5 @@ public class MainHandler implements RequestHandler<WeatherData, WeatherData> {
         logger.log("EVENT TYPE : " + event.getClass().toString() + '\n');
         logger.log("EVENT : " + event + '\n');
         return event;
-    }
+    } 
 }
