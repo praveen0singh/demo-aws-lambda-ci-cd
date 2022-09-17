@@ -3,13 +3,13 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Lambda application.
 Resources:
-  function:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: target/demo-aws-simple-lambda-1.0-SNAPSHOT.jar
-      Handler: demo.aws.simple.lambda.MainHandler
-      Runtime: java11
-      Description: Java function
-      MemorySize: 128
-      Timeout: 10
-      Tracing: Active
+  - demo-aws-simple-lambda:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: demo-aws-simple-lambda
+        Handler: demo.aws.simple.lambda.MainHandler
+        Runtime: java11
+        Description: Java function
+        MemorySize: 128
+        Timeout: 10
+        Tracing: Active
