@@ -1,15 +1,12 @@
-# SAM template for CodeBuild
-AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
-Description: An AWS Lambda application.
-Resources:
+version: 0.0
+resources:
   - demo-aws-simple-lambda:
       Type: AWS::Lambda::Function
       Properties:
         Name: demo-aws-simple-lambda
-        Handler: demo.aws.simple.lambda.MainHandler
-        Runtime: java11
-        Description: Java function
-        MemorySize: 128
-        Timeout: 10
-        Tracing: Active
+        Alias: testAlias
+        CurrentVersion: "1"
+        TargetVersion: "2"
+hooks:
+  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
